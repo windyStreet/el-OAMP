@@ -1,0 +1,21 @@
+{
+  "table": "个人信息和项目信息关系表，记录个人信息和项目信息之间的关联关系",
+  "person_id": [
+    "个人信息id",
+    "string",
+    64,
+    "not null"
+  ],
+  "project_id": [
+    "角色信息id",
+    "string",
+    64,
+    "not null"
+  ],
+  "is_connect": [
+    "个人信息和项目信息是否进行关联",
+    "boolean",
+    1,
+    "not null"
+  ]
+}

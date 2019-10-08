@@ -1,0 +1,2 @@
+webpackJsonp([37],{dyum:function(e,t){},p1dV:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"v-center"},[t("h1",[this._v("邮件记录开发进行中....")])])}]};var s=n("VU/8")({name:"mailRecord"},r,!1,function(e){n("dyum")},"data-v-25bfef5e",null);t.default=s.exports}});
+//# sourceMappingURL=37.5007f17d97905c46c991.js.map

@@ -1,0 +1,21 @@
+{
+  "table": "代码表信息",
+   "codeId": [
+    "代码表id",
+    "string",
+    200,
+    "not null"
+  ],
+   "codeValue": [
+    "代码表值",
+    "string",
+    200,
+    "not null"
+  ],
+  "fatherCode":[
+    "父级代码",
+    "string",
+    0,
+    "able null"
+  ]
+}

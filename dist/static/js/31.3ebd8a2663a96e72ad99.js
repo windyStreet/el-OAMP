@@ -1,0 +1,2 @@
+webpackJsonp([31],{PuBS:function(e,t){},kBFT:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"v-center"},[t("h1",[this._v("用户消息开发进行中....")])])}]};var r=n("VU/8")({name:"userMessage"},s,!1,function(e){n("PuBS")},"data-v-5ca09834",null);t.default=r.exports}});
+//# sourceMappingURL=31.3ebd8a2663a96e72ad99.js.map

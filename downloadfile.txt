@@ -1,0 +1,54 @@
+生成 requirements.txt
+pip freeze > requirements.txt
+
+
+(venv) G:\share\python-workspace\el-OAMP>pip install redis
+Collecting redis
+  Downloading https://files.pythonhosted.org/packages/3b/f6/7a76333cf0b9251ecf49efff635015171843d9b977e4ffcf59f9c4428052/redis-2.10.6-py2.py3-none-any.whl (64kB)
+    100% |████████████████████████████████| 71kB 10kB/s
+Installing collected packages: redis
+Successfully installed redis-2.10.6
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(venv) G:\share\python-workspace\el-OAMP>pip install tronado
+Collecting tronado
+  Could not find a version that satisfies the requirement tronado (from versions: )
+No matching distribution found for tronado
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(venv) G:\share\python-workspace\el-OAMP>pip install tornado
+Collecting tornado
+  Downloading https://files.pythonhosted.org/packages/cd/94/e7c9a8b205215350086879b078af3e47b96384188566075b0ccb288ecf3c/tornado-5.1.1-cp35-cp35m-win_amd64.whl (455kB)
+    100% |████████████████████████████████| 460kB 19kB/s
+Installing collected packages: tornado
+Successfully installed tornado-5.1.1
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(venv) G:\share\python-workspace\el-OAMP>pip install mongoengine
+Collecting mongoengine
+  Downloading https://files.pythonhosted.org/packages/32/d0/74628eaa7839cd35cd68fdab69f76ee0807652996c668354308d61558d38/mongoengine-0.15.3.tar.gz (145kB)
+    100% |████████████████████████████████| 153kB 37kB/s
+Collecting pymongo>=2.7.1 (from mongoengine)
+  Downloading https://files.pythonhosted.org/packages/f0/52/2f6b52acd17c47d92023f63978d9435ace887705976eccef8b1d72101b9e/pymongo-3.7.2-cp35-cp35m-win_amd64.whl (315kB)
+    100% |████████████████████████████████| 317kB 49kB/s
+Collecting six (from mongoengine)
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Installing collected packages: pymongo, six, mongoengine
+  Running setup.py install for mongoengine ... done
+Successfully installed mongoengine-0.15.3 pymongo-3.7.2 six-1.11.0
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(venv) G:\share\python-workspace\el-OAMP>
+
+(venv) G:\share\python-workspace\el-OAMP>pip install pika==0.10.0
+Collecting pika==0.10.0
+  Using cached https://files.pythonhosted.org/packages/26/12/400cf0aca6b1ecf1f00dcd89b246e7a4c8558677304ba067167b8167e714/pika-0.10.0-py2.py3-none-any.whl
+Installing collected packages: pika
+Successfully installed pika-0.10.0
+You are using pip version 9.0.1, however version 18.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+

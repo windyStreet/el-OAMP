@@ -1,0 +1,21 @@
+{
+  "table": "项目信息和角色关系表，记录个人信息和角色信息之间的关联关系",
+  "project_id": [
+    "项目信息id",
+    "string",
+    64,
+    "not null"
+  ],
+  "role_id": [
+    "角色信息id",
+    "string",
+    64,
+    "not null"
+  ],
+  "is_connect": [
+    "项目信息和角色信息是否进行关联",
+    "boolean",
+    1,
+    "not null"
+  ]
+}

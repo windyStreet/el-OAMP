@@ -1,0 +1,33 @@
+{
+  "table": "redis配置信息",
+  "name": [
+    "名称",
+    "string",
+    200,
+    "not null"
+  ],
+  "ip": [
+    "ip",
+    "string",
+    200,
+    "not null"
+  ],
+  "port": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ],
+  "user": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ],
+  "password": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ]
+}

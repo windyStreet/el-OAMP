@@ -1,0 +1,9 @@
+{
+  "table":"项目信息表,记录项目信息内容",
+  "project_name": [
+    "项目名称",
+    "string",
+    200,
+    "not null"
+  ]
+}

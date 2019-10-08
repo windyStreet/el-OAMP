@@ -1,0 +1,22 @@
+{
+  "_id": [
+    "_id",
+    "string",
+    64,
+    "not null"
+  ],
+  "createTime": [
+    "创建时间",
+    "timeStamp",
+    "not null"
+  ],
+  "updateTime": [
+    "更新时间",
+    "timeStamp"
+  ],
+  "remark": [
+    "备注",
+    "string",
+    1000
+  ]
+}

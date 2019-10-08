@@ -1,0 +1,39 @@
+{
+  "table": "工具配置信息",
+  "tool_project_id": [
+    "名称",
+    "string",
+    200,
+    "not null"
+  ],
+  "tool_type_id":[
+    "类型",
+    "string",
+    200,
+    "not null"
+  ],
+  "tool_ip": [
+    "ip",
+    "string",
+    200,
+    "not null"
+  ],
+  "tool_port": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ],
+  "tool_user_name": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ],
+  "tool_password": [
+    "port",
+    "string",
+    200,
+    "not null"
+  ]
+}

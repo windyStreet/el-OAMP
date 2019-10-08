@@ -1,0 +1,159 @@
+
+body {
+    overflow: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+.hidden{
+    display: none;
+}
+.icon-red{
+    color: red;
+}
+.f-szie-32 {
+    font-size: 32px;
+}
+.f-szie-24 {
+    font-size: 24px;
+}
+.f-szie-20 {
+    font-size: 24px;
+}
+.f-szie-16 {
+    font-size: 16px;
+}
+
+.p-left-10 {
+    padding-left: 10px;
+}
+
+.v-container {
+    padding-top: 6px;
+    z-index: 100;
+}
+
+.v-breadcrumb {
+    padding: 5px 15px 0px 15px;
+}
+
+.v-search-buttons {
+    text-align: center
+}
+
+
+.v-search {
+    width: 100%;
+}
+
+.v-table {
+    height: 640px;
+    padding-top: 10px;
+
+}
+
+.v-pagination {
+    display: inline-block;
+    margin-left: 0px;
+    width: 750px;
+    line-height: 30px
+}
+
+
+.v-href{
+    cursor:pointer;
+}
+
+.v-center{
+    text-align: center;
+}
+
+.v-right-dialog{
+    position: absolute!important;
+    right: 0px;
+    margin-top: 9vh!important;
+}
+.v-inline{
+    display: inline-block;
+}
+
+/**********************webuploader*********************************/
+.webuploader-container {
+    position: relative;
+}
+.webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.webuploader-pick-hover {
+    background: #00a2d4;
+}
+
+.webuploader-pick-disable {
+    opacity: 0.6;
+    pointer-events:none;
+}
+
+
+/**********************webuploader*********************************/
+
+/* 列表中的操作图标样式*/
+.item {
+    margin: 4px;
+}
+
+.button-line{
+    display: inline-block;
+}
+
+.set-info{
+    color: green;
+}
+.set-warning{
+    color: #ED861F;
+}
+.set-danger{
+    color: red;
+}
+.set-black{
+    color: black;
+}
+
+.set-danger-0{
+    color: black;
+}
+.set-danger-1{
+    color: red;
+}
+.set-danger-2{
+    color: orange;
+}
+.set-danger-3{
+    color: yellow;
+}
+.set-danger-4{
+    color: blue;
+}

@@ -1,0 +1,21 @@
+{
+  "table": "代码表",
+   "code": [
+    "代码表名称",
+    "string",
+    200,
+    "not null"
+  ],
+   "codeName": [
+    "代码表中文名称",
+    "string",
+    200,
+    "not null"
+  ],
+  "codeList":[
+    "代码列表",
+    "arr",
+    0,
+    "able null"
+  ]
+}
