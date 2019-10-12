@@ -12,6 +12,8 @@ class Logger(logging.Logger):
     def __init__(self, filename=None):
         super(Logger, self).__init__(self)
         log_path = logDirPath + os.sep + "log.log"
+        if not os.path.isdir(logDirPath):
+            os.makedirs(logDirPath, exist_ok=True)
         # formatter = logging.Formatter('[%(asctime)s] - %(filename)s [Line:%(lineno)d] - [%(levelname)s]-[thread:%(thread)s]-[process:%(process)s] - %(message)s')
         formatter = logging.Formatter('[%(levelname)8s]-[%(asctime)s]-%(filename)s :Line:%(lineno)d : %(message)s')
         # 日志文件名
@@ -47,7 +49,6 @@ class Logger(logging.Logger):
 
 def getInstance(filename=None):
     return Logger(filename)
-
 
 # if __name__ == "__main__":
 #     getInstance().info("AAAA")

@@ -19,10 +19,13 @@ class SysRouterBo(Document):
     project_id = StringField(default='sys')  # 项目id
 
     label = StringField()  # label
-    router_show_name = StringField()  # 路由显示名称
-    router_name = StringField()  # 路由名称
-    router_path = StringField()  # 路由路径
+
+    router_has_child = StringField(default='false')  # 是否有子节点
     router_has_icon = StringField(default='false')  # 是否有图标
     router_icon_class = StringField()  # 图标样式
+    router_show_name = StringField()  # 路由显示名称
+    router_path = StringField()  # 路由路径
+
+    router_name = StringField()  # 路由名称
     router_icon_size = StringField()  # 大小
     order = DecimalField()  # 排序

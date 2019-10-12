@@ -15,3 +15,4 @@ class UserBo(Document):
     tel = IntField(required=True, max_length=20)
     email = StringField(required=True, max_length=100)
     nickName = StringField(required=True, max_length=100)
+    roleId = ListField()  # 角色id

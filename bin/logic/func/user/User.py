@@ -10,6 +10,8 @@ from bin.base.data import Data
 from bin.base.sys.Session import SessionDataOpt
 from bin.base.log import Logger
 from bin.base.sys import SingleTableOpt
+from bin.logic import Inner_logic
+from bin.base.data import NavigationTreeUntil
 
 L = Logger.getInstance()
 
@@ -81,6 +83,29 @@ class User(object):
     # 删除用户信息
     def OAMP_delete_user_info(self, data):
         return SingleTableOpt.getInstance(bo=UserBo, data=data).delete()
+
+    # 查询用户导航信息
+    # par roleId[arr]
+    def OAMP_search_user_navigation(self, data):
+        # 查询角色关联的权限数据
+        # 组合数据结构
+        # 返回数据
+        roleIds = data.get('roleId')
+        if roleIds is None:
+            return PR.getInstance().setCode(PR.Code_ERROR).setResult(None).setMsg('请系统管理员为当前用户配置权限')
+        only = ['id', 'node_id', 'parent_id', 'router_has_child', 'router_has_icon', 'router_icon_class', 'router_show_name', 'router_path']
+        nav_tree_ins = NavigationTreeUntil.getInstance()
+        for roleId in roleIds:
+            router_info_res = Inner_logic.getInstance().search_sys_router_info_list({'role_id': roleId}, only)
+            if router_info_res.is_results_not_none():
+                for item in router_info_res.getData():
+                    nav_tree_ins.add_node(item)
+        result = {
+            'router_tree':nav_tree_ins.json(),
+            'router_list':nav_tree_ins.get_filter_node()
+        }
+        return PR.getInstance().setCode(PR.Code_OK).setResult(result).setMsg("功能待完善")
+        # return PR.getInstance().setCode(PR.Code_OK).setResult(None).setMsg("功能待完善")
 
 
 def getInstance():

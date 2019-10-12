@@ -139,6 +139,14 @@ class Service_logic(object):
     def OAMP_userQuit(self, data):
         return User.getInstance().OAMP_userQuit(data)
 
+
+
+    # 查询用户导航信息
+    # par roleId[arr]
+    @trace()
+    def OAMP_search_user_navigation(self,data):
+        return User.getInstance().OAMP_search_user_navigation(data)
+
     # 查询用户信息列表
     @trace()
     def OAMP_search_user_info_list(self, data):

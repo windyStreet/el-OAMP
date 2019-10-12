@@ -44,29 +44,48 @@ class SysRouterManage(object):
             return PR.getInstance().setCode(PR.Code_OK).setResult(None).setMsg('查询系统路由结构,未查询到系统结构')
 
     # 查询系统路由信息列表
-    def OAMP_search_sys_router_info_list(self, data):
+    def OAMP_search_sys_router_info_list(self, data, only=[]):
         x = {
             'id': data.get('_id'),
             'role_id': data.get('role_id', 'sys'),  # 角色id
             'project_id': data.get('project_id', 'sys'),  # 项目id
             'node_id': data.get('node_id'),  # 当前节点id
             'parent_id': data.get('parent_id'),  # 父节点id
+            'router_has_child': data.get('router_has_child'),  # 父节点id
             'router_show_name__contains': data.get('router_show_name'),
             'router_name__contains': data.get('router_name'),
             'createTime__gte': data.get('createTime')[0] if data.get('createTime') is not None and len(data.get('createTime')) >= 1 else '',
             'createTime__lt': data.get('createTime')[1] if data.get('createTime') is not None and len(data.get('createTime')) >= 2 else ''
         }
-        return SingleTableOpt.getInstance().setBO(SysRouterBo).search(filters=x, par=data)
+        return SingleTableOpt.getInstance().setBO(SysRouterBo).search(filters=x, par=data, only=only)
+
+    # 修改父节点状态信息
+    def __update_parent_node_info(self, data, opt):
+        parent_id = data.get('parent_id')
+        # 查询node_id == parent_id 的数据，将其更新为对应状态 router_has_child
+        search_data = {
+            'node_id': parent_id,
+        }
+        res_pr = SingleTableOpt.getInstance().setBO(SysRouterBo).search(filters=search_data)
+        if res_pr.is_results_not_none():  # 结果不为空的情况下
+            for item in res_pr.getData():  # 循环当前结果
+                if opt == 'insert' or opt == 'update':  # 操作类型为插入或者更新时，更改上级节点为存在下级节点
+                    item['router_has_child'] = 'true'
+                if opt == 'delete':  # 操作类型为删除时，更改上级节点为不存在下级节点
+                    item['router_has_child'] = 'false'
+                SingleTableOpt.getInstance().setBO(SysRouterBo).setData(item).update()
 
     # 新增系统路由信息
     def OAMP_insert_sys_router_info(self, data):
         data['node_id'] = Data.getUUID()
         data['role_id'] = data.get('role_id', 'sys')  # 角色id
         data['project_id'] = data.get('project_id', 'sys')  # 项目id
+        self.__update_parent_node_info(data, 'insert')
         return SingleTableOpt.getInstance().setBO(SysRouterBo).setData(data).insert()
 
     # 更新系统路由信息
     def OAMP_update_sys_router_info(self, data):
+        self.__update_parent_node_info(data, 'update')
         return SingleTableOpt.getInstance().setBO(SysRouterBo).setData(data).update()
 
     def _check_is_has_child(self, data):
@@ -87,6 +106,7 @@ class SysRouterManage(object):
         if self._check_is_has_child(data=data):
             return PR.getInstance().setCode(PR.Code_EXCEPTION).setResult(None).setMsg('删除节点存在子节点')
         else:
+            self.__update_parent_node_info(data, 'delete')
             return SingleTableOpt.getInstance().setBO(SysRouterBo).setData(data).delete()
 
     # 添加路由权限
@@ -145,5 +165,3 @@ class SysRouterManage(object):
 
 def getInstance():
     return SysRouterManage()
-
-

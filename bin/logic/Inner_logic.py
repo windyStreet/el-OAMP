@@ -8,6 +8,8 @@ from bin.logic.func.common import Link
 from bin.logic.func.task import ServiceCheckTask
 from bin.logic.func.setting.projectManage import ProjectUpdateConf
 from bin.logic.func.setting.projectManage import ProjectOptRecord
+from bin.logic.func.setting.sysManage import RoleManage
+from bin.logic.func.setting.sysManage import SysRouterManage
 
 
 class Inner_logic(object):
@@ -63,6 +65,14 @@ class Inner_logic(object):
     # 更新项目曹组记录信息
     def update_project_opt_record_info(self, data):
         return ProjectOptRecord.getInstance().OAMP_update_project_opt_record_info(data=data)
+
+    # 查询角色代码列表
+    def search_role_code_list(self, data):
+        return RoleManage.getInstance().OAMP_search_role_code_list(data)
+
+    # 查询系统路由信息列表
+    def search_sys_router_info_list(self, data, only):
+        return SysRouterManage.getInstance().OAMP_search_sys_router_info_list(data, only)
 
 
 def getInstance():
