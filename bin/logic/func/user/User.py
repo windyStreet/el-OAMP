@@ -105,7 +105,6 @@ class User(object):
             'router_list':nav_tree_ins.get_filter_node()
         }
         return PR.getInstance().setCode(PR.Code_OK).setResult(result).setMsg("功能待完善")
-        # return PR.getInstance().setCode(PR.Code_OK).setResult(None).setMsg("功能待完善")
 
 
 def getInstance():
